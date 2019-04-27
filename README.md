@@ -1,99 +1,84 @@
-# LPR(Vehicle License Plate Recognition)
+å¹³å°æ˜¯vs2017å’Œopencv3.4
 
-## Ç°ÑÔ
+opencvä¸‹è½½é“¾æŽ¥[ç‚¹è¿™é‡Œ][]
 
-#### ÕâÊÇÒ»¸ö³µÅÆÊ¶±ðµÄÊµÀý
+[ç‚¹è¿™é‡Œ]:https://opencv.org/releases.html
 
-ÎÒµÄÆ½Ì¨ÊÇvs2017ºÍopencv3.4
 
-opencvÏÂÔØÁ´½Ó[µãÕâÀï][]
-
-[µãÕâÀï]:https://opencv.org/releases.html
-
-~~Ð´Õâ¸öÊÇÒòÎªÊµÑé¿Î²¼ÖÃÁËÒ»¸ö³µÅÆÊ¶±ðµÄ×÷Òµ£¬
-µ«ÊÇÍøÉÏ³µÅÆÊ¶±ðµÄ½Ì³Ì¶¼ºÜ¸´ÔÓ£¬Ò²Ã»ÓÐÌ«Êµ¼Ê¡£
-¶ÔÓÚÍêÈ«Ã»ÓÐ½Ó´¥¹ýµÄÈË£¬ÍêÈ«ÊÇÒ»Í·ÎíË®¡£
-ËùÒÔÎÒÔÚÃþË÷ÁËÒ»¸öÐÇÆÚºó£¬ÖÕÓÚ°ÑÕâ¸ö³µÅÆÊ¶±ðÁË³öÀ´£¬
-Ï£Íû¸øÐÂÊÖÒ»¸öÖ¸µ¼£¬ÔõÃ´Ò»²½²½µØÊµÏÖÒ»¸ö¼òµ¥µÄ³µÅÆÊ¶±ð¡£
-(ÔÝÊ±Ð´¸ö´ó¸Å£¬ÓÐÊ±¼äºó¼ÌÐøÍêÉÆ£¡¾õµÃÓÐÓÃµÄ»°¿ÉÒÔ¸øÎÒÒ»¸östar)~~
-***
-2018.7.13  
-ºÃ¾Ã¶¼Ã»ÓÐÀ´¸üÐÂ£¬Îª×Ô¼ºµÄÀÁ¶è¸Ðµ½ÉîÉîµÄ×ÔÔð¡£Õâ´ÎÀ´¸üÐÂÒ»ÏÂËµÃ÷°É£¡
-***
->ÈÎÎñ:Ê¶±ðÏÂÍ¼ÖÐµÄ³µÅÆ
+>ä»»åŠ¡:è¯†åˆ«ä¸‹å›¾ä¸­çš„è½¦ç‰Œ
 >
 >![car](pictures/car.bmp)
 
 
-	ÒªÊµÏÖ³µÅÆÊ¶±ð£¬Ò»¹²·ÖÎªÁ½´ó²½¡£
-	µÚÒ»£¬³µÅÆ¶¨Î»£¬¾ÍÊÇÔÚÍ¼Æ¬ÖÐÈ·¶¨³ö³µÅÆµÄÎ»ÖÃ£»
-	µÚ¶þ£¬×Ö·ûÊ¶±ð£¬½«ÌáÈ¡³öÀ´µÄ×Ö·ûÍ¼Æ¬½øÐÐÊ¶±ð¡£
+	è¦å®žçŽ°è½¦ç‰Œè¯†åˆ«ï¼Œä¸€å…±åˆ†ä¸ºä¸¤å¤§æ­¥ã€‚
+	ç¬¬ä¸€ï¼Œè½¦ç‰Œå®šä½ï¼Œå°±æ˜¯åœ¨å›¾ç‰‡ä¸­ç¡®å®šå‡ºè½¦ç‰Œçš„ä½ç½®ï¼›
+	ç¬¬äºŒï¼Œå­—ç¬¦è¯†åˆ«ï¼Œå°†æå–å‡ºæ¥çš„å­—ç¬¦å›¾ç‰‡è¿›è¡Œè¯†åˆ«ã€‚
 
-## ÕýÎÄ
+## æ­£æ–‡
 
-#### Ò»¡¢³µÅÆ¶¨Î»
+#### ä¸€ã€è½¦ç‰Œå®šä½
 
-##### 1. ¸ßË¹ÂË²¨
-ÎªÊ²Ã´Òª¸ßË¹ÂË²¨ÄØ£¿Ô­ÒòºÜ¼òµ¥£¬ÒòÎªÒªÆ½»¬Í¼Ïñ£¬È¥³ýÔëÉùµã¡£
+##### 1. é«˜æ–¯æ»¤æ³¢
+ä¸ºä»€ä¹ˆè¦é«˜æ–¯æ»¤æ³¢å‘¢ï¼ŸåŽŸå› å¾ˆç®€å•ï¼Œå› ä¸ºè¦å¹³æ»‘å›¾åƒï¼ŒåŽ»é™¤å™ªå£°ç‚¹ã€‚
 
-![car](pictures/¸ßË¹ÂË²¨.jpg)
-##### 2. sobel±ßÔµÌáÈ¡
-ÖÁÓÚÊ²Ã´ÊÇsobelÄØ£¿
-ÎÒÏÈÒýÓÃ°Ù¶ÈµÄÒ»¾ä»°°É£º
->SobelËã×ÓÊÇÏñËØÍ¼Ïñ±ßÔµ¼ì²âÖÐ×îÖØÒªµÄËã×ÓÖ®Ò»£¬ÔÚ¼¼ÊõÉÏ£¬ËüÊÇÒ»¸öÀëÉ¢µÄÒ»½×²î·ÖËã×Ó£¬ÓÃÀ´¼ÆËãÍ¼ÏñÁÁ¶Èº¯ÊýµÄÒ»½×ÌÝ¶ÈÖ®½üËÆÖµ¡£ÔÚÍ¼ÏñµÄÈÎºÎÒ»µãÊ¹ÓÃ´ËËã×Ó£¬½«»á²úÉú¸Ãµã¶ÔÓ¦µÄÌÝ¶ÈÊ¸Á¿»òÊÇÆä·¨Ê¸Á¿¡£
+![car](pictures/é«˜æ–¯æ»¤æ³¢.jpg)
+##### 2. sobelè¾¹ç¼˜æå–
+è‡³äºŽä»€ä¹ˆæ˜¯sobelå‘¢ï¼Ÿ
+æˆ‘å…ˆå¼•ç”¨ç™¾åº¦çš„ä¸€å¥è¯å§ï¼š
+>Sobelç®—å­æ˜¯åƒç´ å›¾åƒè¾¹ç¼˜æ£€æµ‹ä¸­æœ€é‡è¦çš„ç®—å­ä¹‹ä¸€ï¼Œåœ¨æŠ€æœ¯ä¸Šï¼Œå®ƒæ˜¯ä¸€ä¸ªç¦»æ•£çš„ä¸€é˜¶å·®åˆ†ç®—å­ï¼Œç”¨æ¥è®¡ç®—å›¾åƒäº®åº¦å‡½æ•°çš„ä¸€é˜¶æ¢¯åº¦ä¹‹è¿‘ä¼¼å€¼ã€‚åœ¨å›¾åƒçš„ä»»ä½•ä¸€ç‚¹ä½¿ç”¨æ­¤ç®—å­ï¼Œå°†ä¼šäº§ç”Ÿè¯¥ç‚¹å¯¹åº”çš„æ¢¯åº¦çŸ¢é‡æˆ–æ˜¯å…¶æ³•çŸ¢é‡ã€‚
 
-ÄÇÎÒÃÇÓÃsobelËã×Ó¸ÉÂïÄØ£¿ÎÒÃÇµÄÄ¿±êÊÇ¶¨Î»³µÅÆ£¬ÒòÎª³µÅÆµÄÖÜÎ§ÂÖÀª·ÖÃ÷£¬Ê¹ÓÃsobel¿ÉÒÔÇåÎúµÄÌáÈ¡±ßÔµ£¬Ð§¹ûÈçÍ¼ËùÊ¾£º  
-![car](pictures/sobelÍ¼Ïñ.jpg)
-##### 3.¶þÖµ»¯Í¼Ïñ
-ÕâÊ±ÎÒÃÇ¾Í¿ÉÒÔ¿´µ½³µÅÆ³ÉÎªÁËÍ¼ÏñÖÐÁÁ¶È×î´óµÄÇøÓò£¬ËùÒÔÎÒÃÇÕâ´ÎÔÙÀ´½øÐÐ¶þÖµ»¯£¬Ö»±£Áô¸ßÓÚÒ»¶¨ãÐÖµµÄµã£¬Ð§¹ûÍ¼ÈçÏÂ£º
+é‚£æˆ‘ä»¬ç”¨sobelç®—å­å¹²å˜›å‘¢ï¼Ÿæˆ‘ä»¬çš„ç›®æ ‡æ˜¯å®šä½è½¦ç‰Œï¼Œå› ä¸ºè½¦ç‰Œçš„å‘¨å›´è½®å»“åˆ†æ˜Žï¼Œä½¿ç”¨sobelå¯ä»¥æ¸…æ™°çš„æå–è¾¹ç¼˜ï¼Œæ•ˆæžœå¦‚å›¾æ‰€ç¤ºï¼š  
+![car](pictures/sobelå›¾åƒ.jpg)
+##### 3.äºŒå€¼åŒ–å›¾åƒ
+è¿™æ—¶æˆ‘ä»¬å°±å¯ä»¥çœ‹åˆ°è½¦ç‰Œæˆä¸ºäº†å›¾åƒä¸­äº®åº¦æœ€å¤§çš„åŒºåŸŸï¼Œæ‰€ä»¥æˆ‘ä»¬è¿™æ¬¡å†æ¥è¿›è¡ŒäºŒå€¼åŒ–ï¼Œåªä¿ç•™é«˜äºŽä¸€å®šé˜ˆå€¼çš„ç‚¹ï¼Œæ•ˆæžœå›¾å¦‚ä¸‹ï¼š
 
-![car](pictures/¶þÖµ»¯´¦Àí.jpg)
-##### 4.±ÕÔËËã
-Í¼ÏñÖÐµÄÕâÐ©µãÎÒÃÇÔõÃ´ÀûÓÃÄØ£¿ÕâÊ±ÎÒÃÇÐèÒª½«ÕâÐ©µãËùÔÚµÄÇøÓòÁ¬Í¨ÆðÀ´£¬ËùÒÔ»áÓÃµ½±ÕÔËËã¡£  
-Ê²Ã´ÊÇ±ÕÔËËãÄØ£¿
->ÔÚÊýÑ§ÐÎÌ¬Ñ§ÖÐ£¬±ÕÔËËã±»¶¨ÒåÎªÏÈÅòÕÍºó¸¯Ê´¡£
+![car](pictures/äºŒå€¼åŒ–å¤„ç†.jpg)
+##### 4.é—­è¿ç®—
+å›¾åƒä¸­çš„è¿™äº›ç‚¹æˆ‘ä»¬æ€Žä¹ˆåˆ©ç”¨å‘¢ï¼Ÿè¿™æ—¶æˆ‘ä»¬éœ€è¦å°†è¿™äº›ç‚¹æ‰€åœ¨çš„åŒºåŸŸè¿žé€šèµ·æ¥ï¼Œæ‰€ä»¥ä¼šç”¨åˆ°é—­è¿ç®—ã€‚  
+ä»€ä¹ˆæ˜¯é—­è¿ç®—å‘¢ï¼Ÿ
+>åœ¨æ•°å­¦å½¢æ€å­¦ä¸­ï¼Œé—­è¿ç®—è¢«å®šä¹‰ä¸ºå…ˆè†¨èƒ€åŽè…èš€ã€‚
 
-[ÏÈµãÕâÀïÁË½â¸¯Ê´ºÍÅòÕÍ](https://blog.csdn.net/keith_bb/article/details/54572165)
+[å…ˆç‚¹è¿™é‡Œäº†è§£è…èš€å’Œè†¨èƒ€](https://blog.csdn.net/keith_bb/article/details/54572165)
 
-[ÔÙµãÕâÀïÁË½â¿ªÔËËã¡¢±ÕÔËËãµÈ](https://blog.csdn.net/keith_bb/article/details/54578186?locationNum=6&fps=1)
+[å†ç‚¹è¿™é‡Œäº†è§£å¼€è¿ç®—ã€é—­è¿ç®—ç­‰](https://blog.csdn.net/keith_bb/article/details/54578186?locationNum=6&fps=1)
 
-![car](pictures/±ÕÔËËã.jpg)
-##### 5.È¥³ýÐ¡ÇøÓò
-ÁË½âÉÏÃæµÄÖ®ºó£¬ÏàÐÅÄãÒ²ÖªµÀÕâÀï¸ÃÔõÃ´×öÀ²£¡
+![car](pictures/é—­è¿ç®—.jpg)
+##### 5.åŽ»é™¤å°åŒºåŸŸ
+äº†è§£ä¸Šé¢çš„ä¹‹åŽï¼Œç›¸ä¿¡ä½ ä¹ŸçŸ¥é“è¿™é‡Œè¯¥æ€Žä¹ˆåšå•¦ï¼
 
-![car](pictures/È¥³ýÐ¡ÇøÓò.jpg)
-![car](pictures/Ìî³ä.jpg)
-##### 6.ÌáÈ¡ÂÖÀª
-ÎÒÃÇÔÚÉÏÃæÒÑ¾­ÕÒµ½ÁË³µÅÆËùÔÚÇøÓò£¬ÏÖÔÚÎÒÃÇÐèÒªÕÒµ½³µÅÆµÄ±ß½çµã¡£  
-ÎÒÃÇÓÐÕâÒ»¶Ñµã¼¯£¬ÎÒÃÇ¿ÉÒÔµü´úÑ°ÕÒ³ö×î×ó±ßÇÒ¿¿ÉÏµÄµãÖ®ÀàµÄ¡£  
-ÒòÎªÎÒÃÇÏÂÒ»²½Òª×ö·ÂÉä±ä»»£¬ÐèÒªÈý¸ö±ß½çµã£¬ËùÒÔÎÒÃÇÕÒ³öÈçÍ¼ËùÊ¾µÄÈý¸öµã¾ÍÐÐÁË¡£
+![car](pictures/åŽ»é™¤å°åŒºåŸŸ.jpg)
+![car](pictures/å¡«å…….jpg)
+##### 6.æå–è½®å»“
+æˆ‘ä»¬åœ¨ä¸Šé¢å·²ç»æ‰¾åˆ°äº†è½¦ç‰Œæ‰€åœ¨åŒºåŸŸï¼ŒçŽ°åœ¨æˆ‘ä»¬éœ€è¦æ‰¾åˆ°è½¦ç‰Œçš„è¾¹ç•Œç‚¹ã€‚  
+æˆ‘ä»¬æœ‰è¿™ä¸€å †ç‚¹é›†ï¼Œæˆ‘ä»¬å¯ä»¥è¿­ä»£å¯»æ‰¾å‡ºæœ€å·¦è¾¹ä¸”é ä¸Šçš„ç‚¹ä¹‹ç±»çš„ã€‚  
+å› ä¸ºæˆ‘ä»¬ä¸‹ä¸€æ­¥è¦åšä»¿å°„å˜æ¢ï¼Œéœ€è¦ä¸‰ä¸ªè¾¹ç•Œç‚¹ï¼Œæ‰€ä»¥æˆ‘ä»¬æ‰¾å‡ºå¦‚å›¾æ‰€ç¤ºçš„ä¸‰ä¸ªç‚¹å°±è¡Œäº†ã€‚
 
-À¶É«¿ò¿ÉÒÔµãÏÂÃæÁË½âÒ»ÏÂ£¬ºóÃæ»áºÜÓÐÓÃ¡£  
-[»æÖÆ×îÐ¡Íâ½Ó¾ØÐÎ](https://blog.csdn.net/dcrmg/article/details/52260699)
+è“è‰²æ¡†å¯ä»¥ç‚¹ä¸‹é¢äº†è§£ä¸€ä¸‹ï¼ŒåŽé¢ä¼šå¾ˆæœ‰ç”¨ã€‚  
+[ç»˜åˆ¶æœ€å°å¤–æŽ¥çŸ©å½¢](https://blog.csdn.net/dcrmg/article/details/52260699)
 
-![car](pictures/³µÅÆÇøÓò.jpg)
-##### 7.·ÂÉä±ä»»
-Ô­Àí»¹ÊÇ¿´²©¿Í°É£¬·ÂÉä±ä»»ÄÜ×öµ½¶ÔÍ¼ÏñÐý×ª£¬Æ½ÒÆºÍËõ·Å¡£  
-ÕâÀï¸ù¾ÝÌáÈ¡µ½µÄµã£¬ÔÙ¶Ô¸ßË¹ÂË²¨ºóµÄÍ¼½øÐÐ·ÂÉä±ä»»£¬Ö»±£Áô³µÅÆ²¿·Ö¡£
+![car](pictures/è½¦ç‰ŒåŒºåŸŸ.jpg)
+##### 7.ä»¿å°„å˜æ¢
+åŽŸç†è¿˜æ˜¯çœ‹åšå®¢å§ï¼Œä»¿å°„å˜æ¢èƒ½åšåˆ°å¯¹å›¾åƒæ—‹è½¬ï¼Œå¹³ç§»å’Œç¼©æ”¾ã€‚  
+è¿™é‡Œæ ¹æ®æå–åˆ°çš„ç‚¹ï¼Œå†å¯¹é«˜æ–¯æ»¤æ³¢åŽçš„å›¾è¿›è¡Œä»¿å°„å˜æ¢ï¼Œåªä¿ç•™è½¦ç‰Œéƒ¨åˆ†ã€‚
 
-[µãÒ»ÏÂ£¬ÍæÒ»Äê](http://www.opencv.org.cn/opencvdoc/2.3.2/html/doc/tutorials/imgproc/imgtrans/warp_affine/warp_affine.html)
+[äº†è§£ä¸€ä¸‹](http://www.opencv.org.cn/opencvdoc/2.3.2/html/doc/tutorials/imgproc/imgtrans/warp_affine/warp_affine.html)
 
-[ÉîÈë°æ](https://www.cnblogs.com/bnuvincent/p/6691189.html)
+[æ·±å…¥ç‰ˆ](https://www.cnblogs.com/bnuvincent/p/6691189.html)
 
-![car](pictures/·ÂÉä±ä»».jpg)
+![car](pictures/ä»¿å°„å˜æ¢.jpg)
 
-#### ¶þ¡¢×Ö·ûÊ¶±ð
+#### äºŒã€å­—ç¬¦è¯†åˆ«
 
-##### 1.ÌáÈ¡×Ö·ûÂÖÀª
-ÕâÀïÏÈ¶ÔÍ¼Ïñ¶þÖµ»¯£¬ÔÙÑ°ÕÒ×îÐ¡Íâ½Ó¾ØÐÎ¡£  
-µ±È»ºº×Ö¿É²»ÊÇºÜ¼òµ¥£¬ÒòÎªÓÐºÜ¶à¶ÀÁ¢µÄ±Ê»­£¬ËùÒÔ»¹ÐèÒªÔÚÈÝÆ÷ÖÐÒÆ³ýÐ¡ÓÚÒ»¶¨Ãæ»ýµÄ¾ØÐÎ¡£  
-ÕâÑùÒ»Ð©µã°¡£¬¾Í²»»áÔÚÎÒÃÇÐèÒªÊ¶±ðµÄ¶ÔÏóÖÐ¡£
+##### 1.æå–å­—ç¬¦è½®å»“
+è¿™é‡Œå…ˆå¯¹å›¾åƒäºŒå€¼åŒ–ï¼Œå†å¯»æ‰¾æœ€å°å¤–æŽ¥çŸ©å½¢ã€‚  
+å½“ç„¶æ±‰å­—å¯ä¸æ˜¯å¾ˆç®€å•ï¼Œå› ä¸ºæœ‰å¾ˆå¤šç‹¬ç«‹çš„ç¬”ç”»ï¼Œæ‰€ä»¥è¿˜éœ€è¦åœ¨å®¹å™¨ä¸­ç§»é™¤å°äºŽä¸€å®šé¢ç§¯çš„çŸ©å½¢ã€‚  
+è¿™æ ·ä¸€äº›ç‚¹å•Šï¼Œå°±ä¸ä¼šåœ¨æˆ‘ä»¬éœ€è¦è¯†åˆ«çš„å¯¹è±¡ä¸­ã€‚
 
-![car](pictures/×Ö·ûÂÖÀª.jpg)
+![car](pictures/å­—ç¬¦è½®å»“.jpg)
 
-##### 2.Ê¶±ð×Ö·û
-µ±Ê±×öÕâ¸öÊ±¼äÒòËØ£¬²ÉÓÃÁË×î¼òµ¥Ò²ÊÇºÜÓÐÐ§µÄÒ»ÖÖ·½·¨£¬¶ÔÃ¿¸ö×Ö·û±ä»»µ½±ê×¼´óÐ¡£¬ºÍÄ£°åµãÓëµãÖ®¼äÖð¸ö¼ÆËã£¬×îºóÊä³öÓëÖ®Æ¥Åä¶È×î¸ßµÄ×Ö·û¡£
-![car](pictures/¼ÆËãÆ¥Åä¶È.jpg)
+##### 2.è¯†åˆ«å­—ç¬¦
+å½“æ—¶åšè¿™ä¸ªæ—¶é—´å› ç´ ï¼Œé‡‡ç”¨äº†æœ€ç®€å•ä¹Ÿæ˜¯å¾ˆæœ‰æ•ˆçš„ä¸€ç§æ–¹æ³•ï¼Œå¯¹æ¯ä¸ªå­—ç¬¦å˜æ¢åˆ°æ ‡å‡†å¤§å°ï¼Œå’Œæ¨¡æ¿ç‚¹ä¸Žç‚¹ä¹‹é—´é€ä¸ªè®¡ç®—ï¼Œæœ€åŽè¾“å‡ºä¸Žä¹‹åŒ¹é…åº¦æœ€é«˜çš„å­—ç¬¦ã€‚
+![car](pictures/è®¡ç®—åŒ¹é…åº¦.jpg)
 
-Êä³ö½á¹ûÈçÏÂ£º  
-![car](pictures/Êä³ö³µÅÆ½á¹û.jpg)
+è¾“å‡ºç»“æžœå¦‚ä¸‹ï¼š  
+![car](pictures/è¾“å‡ºè½¦ç‰Œç»“æžœ.jpg)
